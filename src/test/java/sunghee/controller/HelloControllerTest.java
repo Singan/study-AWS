@@ -1,9 +1,6 @@
-package controller;
-
-import static org.junit.Assert.*;
+package sunghee.controller;
 
 
-import controller.HelloController;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
