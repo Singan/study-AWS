@@ -1,4 +1,4 @@
-package sunghee.controller;
+package sunghee.web.controller;
 
 
 import org.junit.jupiter.api.Test;

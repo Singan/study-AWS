@@ -1,4 +1,4 @@
-package sunghee.dto;
+package sunghee.web.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

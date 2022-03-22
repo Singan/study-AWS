@@ -1,4 +1,4 @@
-package sunghee.dto;
+package sunghee.web.dto;
 
 import org.junit.Test;
 
