@@ -18,6 +18,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import sunghee.domain.posts.Posts;
 import sunghee.domain.posts.PostsRepository;
 import sunghee.web.dto.PostsSaveRequestDto;
+import sunghee.web.dto.PostsUpdateRequestDto;
 
 import java.util.List;
 
@@ -65,5 +66,38 @@ public class PostsApiControllerTest {
         List<Posts> all = postsRepository.findAll();
         assertThat(all.get(0).getTitle()).isEqualTo(title);
         assertThat(all.get(0).getContent()).isEqualTo(content);
+    }
+    @Test
+    public void post_update() throws Exception {
+        //given
+        Posts savedPosts = postsRepository.save(Posts.builder()
+                .title("title")
+                .content("content")
+                .author("author")
+                .build());
+
+        Long updateId = savedPosts.getId();
+        String expectedTitle = "title2";
+        String expectedContent = "content2";
+
+        PostsUpdateRequestDto requestDto = PostsUpdateRequestDto.builder()
+                .title(expectedTitle)
+                .content(expectedContent)
+                .build();
+
+        String url = "http://localhost:" + port + "/api/v1/posts/"+ updateId;
+
+        HttpEntity<PostsUpdateRequestDto> requestEntity = new HttpEntity<>(requestDto);
+
+        //when
+        ResponseEntity<Long> responseEntity = restTemplate.exchange(url, HttpMethod.PUT, requestEntity, Long.class);
+
+        //then
+        assertThat(responseEntity.getStatusCode()).isEqualTo(HttpStatus.OK);
+        assertThat(responseEntity.getBody()).isGreaterThan(0L);
+
+        List<Posts> all = postsRepository.findAll();
+        assertThat(all.get(0).getTitle()).isEqualTo(expectedTitle);
+        assertThat(all.get(0).getContent()).isEqualTo(expectedContent);
     }
 }
