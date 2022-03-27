@@ -3,13 +3,14 @@ package sunghee.domain.posts;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import sunghee.service.BaseTimeEntity;
 
 import javax.persistence.*;
 
 @NoArgsConstructor
 @Entity
 @Getter
-public class Posts { //테이블객체
+public class Posts extends BaseTimeEntity { //테이블객체
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
