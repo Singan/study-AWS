@@ -21,7 +21,6 @@ public class PostsApiController {
 
     @PutMapping("/api/v1/posts/{id}")
     public Long update(@PathVariable Long id, @RequestBody PostsUpdateRequestDto requestDto) { //생성자 빌더 실행
-        System.out.println("되는거맞냐?");
         return postsService.update(id, requestDto); //서비스 update 실행 > PostsRespository(JPA).findById 해서 찾고 UPDATE
     }
 
@@ -31,9 +30,9 @@ public class PostsApiController {
         return postsService.findById(id);
     }
 
-    @GetMapping("/api/v1/posts/list")
-    public List<PostsResponseDto> postsList() {
-
-        return postsService.postsList();
+    @DeleteMapping("/api/v1/posts/{id}")
+    public Long delete(Long id) {
+        postsService.delete(id);
+        return id;
     }
 }
