@@ -9,8 +9,7 @@ import sunghee.web.dto.HelloResponseDto;
 
 @RestController
 public class HelloController {
-    @Autowired
-    PostsRepository postsRepository;
+
     @GetMapping("/hello")
     public String hello(){ return "hello"; }
 
