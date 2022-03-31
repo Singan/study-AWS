@@ -58,4 +58,5 @@ public class IndexControllerTest {
         String body = this.restTemplate.getForObject("/posts/update/1",String.class);
         System.out.println(body);
     }
+
 }
