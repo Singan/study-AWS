@@ -1,0 +1,10 @@
+sunghee/web/dto/HelloResponseDtoTest.java
+ sunghee.web.dto.HelloResponseDtoTest
+sunghee/domain/posts/PostsRepositoryTest.java
+ sunghee.domain.posts.PostsRepositoryTest
+sunghee/web/controller/IndexControllerTest.java
+ sunghee.web.controller.IndexControllerTest
+sunghee/web/controller/HelloControllerTest.java
+ sunghee.web.controller.HelloControllerTest
+sunghee/web/controller/PostsApiControllerTest.java
+ sunghee.web.controller.PostsApiControllerTest
