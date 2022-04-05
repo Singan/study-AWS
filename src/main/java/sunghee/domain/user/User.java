@@ -3,6 +3,7 @@ package sunghee.domain.user;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.session.jdbc.config.annotation.SpringSessionDataSource;
 import sunghee.service.BaseTimeEntity;
 
 import javax.persistence.*;
@@ -10,6 +11,7 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor
 @Entity
+@SpringSessionDataSource
 public class User extends BaseTimeEntity {
 
     @Id
