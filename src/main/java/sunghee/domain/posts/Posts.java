@@ -16,6 +16,7 @@ public class Posts extends BaseTimeEntity { //테이블객체
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @Column(length = 500, nullable = false)
     private String title;
 
